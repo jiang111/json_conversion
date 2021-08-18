@@ -11,9 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   json_conversion_annotation:
-    path: ./../../json_conversion_annotation
+    path: ./../json_conversion_annotation
   json_conversion:
-    path: ./../../json_conversion
+    path: ./../json_conversion
 
 dev_dependencies:
   flutter_test:
