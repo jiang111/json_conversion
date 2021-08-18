@@ -1,0 +1,7 @@
+builders:
+  json_conversion_builder:
+    import: "package:json_conversion/json_conversion.dart"
+    builder_factories: ["jsonConversionBuilder"]
+    build_extensions: {   '.dart': ['.jc.dart'] }
+    auto_apply: all_packages
+    build_to: source
