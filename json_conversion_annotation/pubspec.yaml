@@ -1,5 +1,5 @@
 name: json_conversion_annotation
-version: 0.0.3
+version: 0.0.4
 description: >-
   Classes and helper functions that support JSON code generation via the
   `json_conversion` package.
