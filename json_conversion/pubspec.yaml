@@ -2,7 +2,7 @@ name: json_conversion
 description: >-
   Automatically generate code for jsonDecode by annotating
   Dart classes.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/jiang111/json_conversion
 
 environment:
@@ -16,8 +16,7 @@ dependencies:
   source_gen: ^1.0.2
   analyzer: ^1.7.1
   glob: ^2.0.1
-  json_conversion_annotation:
-    path: ./../json_conversion_annotation
+  json_conversion_annotation: ^0.0.3
 
 dev_dependencies:
   build_runner: ^2.0.5
