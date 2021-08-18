@@ -19,9 +19,11 @@ class JsonConversionBuilder extends Builder {
     final lib = await buildStep.inputLibrary;
     final reader = LibraryReader(lib);
     String output;
-    Iterable<AnnotatedElement> element = reader.annotatedWith(TypeChecker.fromRuntime(JsonConversionTarget));
+    Iterable<AnnotatedElement> element =
+        reader.annotatedWith(TypeChecker.fromRuntime(JsonConversionTarget));
     if (element.isNotEmpty) {
-      output = await _generate(element.first.element.displayName, reader, buildStep);
+      output =
+          await _generate(element.first.element.displayName, reader, buildStep);
 
       await buildStep.writeAsString(
         buildStep.inputId.changeExtension(_outputExtensions),
@@ -35,7 +37,8 @@ class JsonConversionBuilder extends Builder {
         '.dart': [_outputExtensions]
       };
 
-  Future<String> _generate(String clazzName, LibraryReader reader, BuildStep buildStep) async {
+  Future<String> _generate(
+      String clazzName, LibraryReader reader, BuildStep buildStep) async {
     List<BeanInfo> beans = [];
     final pattern = '**/*.dart';
     final assetIds = await buildStep.findAssets(Glob(pattern)).toList()
@@ -44,7 +47,8 @@ class JsonConversionBuilder extends Builder {
     for (var inputId in assetIds) {
       if (!await resolver.isLibrary(inputId)) continue;
       final lib = await resolver.libraryFor(inputId);
-      final generatedBean = await _generateBeanInfo(LibraryReader(lib), inputId);
+      final generatedBean =
+          await _generateBeanInfo(LibraryReader(lib), inputId);
       if (generatedBean != null) {
         beans.add(generatedBean);
       }
@@ -95,11 +99,13 @@ ${beans.map((e) {
 
   _generateBeanInfo(LibraryReader library, AssetId inputId) {
     try {
-      final annotatedElement = library.annotatedWith(TypeChecker.fromRuntime(JsonConversion)).first;
+      final annotatedElement =
+          library.annotatedWith(TypeChecker.fromRuntime(JsonConversion)).first;
       final className = annotatedElement.element.displayName;
       final path = inputId.path;
       final package = inputId.package;
-      final import = "import 'package:$package/${path.replaceFirst('lib/', '')}';";
+      final import =
+          "import 'package:$package/${path.replaceFirst('lib/', '')}';";
       return BeanInfo(import, className);
     } on StateError catch (_) {
       return null;

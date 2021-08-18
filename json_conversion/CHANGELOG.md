@@ -10,3 +10,7 @@
 ## 0.0.3
 
 * add builder
+
+## 0.0.4
+
+* add builder
