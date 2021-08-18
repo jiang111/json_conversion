@@ -3,7 +3,7 @@ version: 0.0.1
 description: >-
   Classes and helper functions that support JSON code generation via the
   `json_conversion` package.
-repository: https://github.com/jiang111/json_conversion
+repository: https://github.com/jiang111/json_conversion/tree/main/json_conversion_annotation
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
