@@ -5,11 +5,11 @@
 ## 使用 添加如下依赖
 ```
 dependencies:
-  json_conversion_annotation: ^0.0.1
+  json_conversion_annotation: ^0.0.4
 
 dev_dependencies:
   build_runner: ^2.0.0
-  json_conversion: ^0.0.1
+  json_conversion: ^0.0.4
 
 ```
 
