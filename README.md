@@ -1,4 +1,4 @@
-# dart中Json序列化全局统一解析
+# [dart中Json序列化全局统一解析](https://pub.dev/packages/json_conversion)
 
 提供json序列化统一处理功能,可用于网络请求成功之后的统一解析
 
